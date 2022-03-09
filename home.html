@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         .crossSym:hover {
             cursor: pointer;
@@ -32,7 +34,8 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center"
                             ng-repeat="task in taskList">
                             {{task}}
-                            <span class="crossSym" ng-click="removeTask($index)">&#x1F5D9;</span>
+                            <!-- //span class="" >&#128473;</span> -->
+                            <i class="fa fa-times crossSym" ng-click="removeTask($index)" aria-hidden="true"></i>
                         </li>
                     </ul>
                 </div>
