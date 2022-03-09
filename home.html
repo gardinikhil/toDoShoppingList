@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .crossSym:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <title>to do</title>
+</head>
+
+<body>
+    <div class="container p-5" ng-app="toDoApp">
+        <div ng-controller="toDoCtrl">
+            <div class="card">
+                <div class="card-header"><h4>My Shopping list</h4></div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            ng-repeat="task in taskList">
+                            {{task}}
+                            <span class="crossSym" ng-click="removeTask($index)">&#128473;</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="input-group my-3">
+                        <input type="text" class="form-control" placeholder="Add shopping item here....." ng-model="taskToAdd">
+                        <div class="input-group-append">
+                          <button class="btn btn-success" type="submit" ng-click="addTask()">Go</button>
+                        </div>
+                      </div>
+                      <p>{{errorMsg}}</p>
+                </div>
+              </div>
+           
+
+            
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
